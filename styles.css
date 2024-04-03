@@ -185,15 +185,28 @@ a:hover {
         flex-direction: column;
         text-wrap: nowrap;
         padding-block: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .nav-items > * {
+        display: none;
+    }
+
+    .nav-items > *:last-child {
+        display: block;
     }
 
     .nav-items .menu-icon {
-        display: none;
+        /* display: none; */
+        width: 35px;
+        position: relative;
+        top: 0.3rem;
+        right: -8rem;
     }
 
     .main-contents {
         flex-wrap: wrap;
-        height: 85vh;
+        height: 92.5vh;
         padding-block: 1rem;
     }
 
@@ -218,6 +231,8 @@ a:hover {
     .sub-container2 {
         flex-direction: column;
         padding: 0;
+        justify-content: flex-start;
+        padding-top: 4rem;
     }
 
     .images-container,
