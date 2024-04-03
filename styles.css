@@ -1,0 +1,254 @@
+:root {
+    --primary-color: #ff7171;
+    --gradient-color1: #fff7ad;
+    --gradient-color2: #ffaaf8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: Helvetica, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Common Utility Classes */
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-justify-center {
+    justify-content: center;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.background-image-reset {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* All Styles */
+.title,
+h3 {
+    text-transform: uppercase;
+}
+
+h3 {
+    font-weight: 400;
+}
+
+.title {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+}
+
+.nav-bar {
+    /* position: fixed;
+    top: 0; */
+    width: 100%;
+    z-index: 1000;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: text-decoration 0.5s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.nav-items {
+    list-style: none;
+    padding-inline: 10rem;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    justify-content: space-around;
+    background-color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.menu-icon {
+    width: 50px;
+}
+
+.main-contents {
+    background-image: linear-gradient(
+        to right,
+        var(--gradient-color1),
+        var(--gradient-color2)
+    );
+    height: 93vh;
+}
+
+.main-content1 {
+    width: 49.99%;
+    gap: 3rem;
+    margin-inline: 5%;
+}
+
+.main-contents .btn {
+    width: 10rem;
+    height: 2rem;
+    background-color: var(--primary-color);
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+
+.main-contents .btn:hover {
+    filter: brightness(95%);
+}
+
+.main-contents .btn:active {
+    transform: scale(95%);
+}
+
+.main-content2 {
+    background-image: url("./assets/pexels-robin-stickel-70497.jpg");
+    width: 65%;
+}
+
+.sub-container2 {
+    height: 100vh;
+    background-image: linear-gradient(
+        to right bottom,
+        var(--gradient-color1),
+        var(--gradient-color2)
+    );
+    gap: 2rem;
+    padding-inline: 2rem;
+}
+
+.images-container {
+    width: 40%;
+    display: grid;
+    grid-template-areas:
+        "img1 img3"
+        "img2 img3";
+
+    height: 60%;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+}
+
+.image-item1 {
+    grid-area: img1;
+    background-image: url("./assets/pexels-rachel-claire-6752433.jpg");
+}
+.image-item2 {
+    grid-area: img2;
+    background-image: url("./assets/pexels-eva-bronzini-6141651.jpg");
+}
+.image-item3 {
+    grid-area: img3;
+    background-image: url("./assets/pexels-mister-mister-3434523.jpg");
+}
+
+.side-text {
+    width: 40%;
+    background-color: var(--primary-color);
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.more-items {
+    gap: 0.6rem;
+}
+
+/* Responsiveness */
+
+/* Mobile Devices */
+@media (min-width: 319px) and (max-width: 480px) {
+    body {
+        scroll-behavior: smooth;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+    }
+
+    .nav-items {
+        flex-direction: column;
+        text-wrap: nowrap;
+        padding-block: 0.5rem;
+    }
+
+    .nav-items .menu-icon {
+        display: none;
+    }
+
+    .main-contents {
+        flex-wrap: wrap;
+        height: 85vh;
+        padding-block: 1rem;
+    }
+
+    .main-content1,
+    .main-content2 {
+        width: 100%;
+    }
+
+    .main-content1 {
+        gap: 1.5rem;
+    }
+
+    .main-content1 .text {
+        font-size: 1rem;
+    }
+
+    .main-content2 {
+        height: 100%;
+        margin-top: 1rem;
+    }
+
+    .sub-container2 {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .images-container,
+    .side-text {
+        width: 90%;
+    }
+
+    .images-container {
+        height: 40%;
+    }
+}
+
+/* IPad & Tablet Devices */
+@media (min-width: 481px) and (max-width: 1200px) {
+    .nav-items {
+        gap: 1.5rem;
+        text-wrap: nowrap;
+        padding-inline: 1.5rem;
+    }
+
+    .main-contents {
+        height: 100vh;
+    }
+
+    .sub-container2 {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .images-container,
+    .side-text {
+        width: 90%;
+    }
+}
